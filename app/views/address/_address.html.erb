@@ -27,7 +27,7 @@
 		</table>
 	</div>
 	<div>
-		<%= link_to "Edit Address", edit_address_path(address), class: "btn btn-warning" unless order.status %>
+		<%= link_to "Edit Address", edit_address_path(address), class: "btn btn-warning" %>
 		<%= link_to "Delete Address",address_path(address), method: :delete, class: "btn btn-warning" if params[:controller] == "address" %>
 	</div>
 </div>
