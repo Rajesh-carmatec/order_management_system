@@ -1,0 +1,10 @@
+<tr>
+	<td><%= order.tittle %></td>
+	<td><%= order.description %></td>
+	<td><%= order.status ? "Completed" : "Pending" %></td>
+	<td>
+		<%= link_to (order.status ? 'Show' : 'Review Order' ), order,class: "btn btn-warning" %>
+		<%= link_to 'Edit', edit_order_path(order), class: "btn btn-warning" unless order.status %>
+		<%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+	</td>
+</tr>

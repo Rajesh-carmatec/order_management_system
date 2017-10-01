@@ -1,0 +1,20 @@
+development:
+   adapter: mysql2
+   database: foor_order_app_dev
+   username: root
+   password: 
+   host: localhost
+  
+test:
+   adapter: mysql2
+   database: foor_order_app_test
+   username: root
+   password: 
+   host: localhost
+  
+production:
+   adapter: mysql2
+   database: foor_order_app_prod
+   username: root
+   password: 
+   host: localhost

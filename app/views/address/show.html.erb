@@ -1,0 +1,35 @@
+<h1>Address show Page</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address Line 1:</strong>
+  <%= @address.addrress_line_1 %>
+</p>
+
+<p>
+  <strong>Address Line 2:</strong>
+  <%= @address.addrress_line_2 %>
+</p>
+
+<p>
+  <strong>Pincode:</strong>
+  <%= @address.pincode %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @address.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @address.country %>
+</p>
+
+<p>
+  <strong>Current Address:</strong>
+  <%= @address.is_current_address ? "Yes" : "No" %>
+</p>
+
+<%= link_to 'Edit', edit_address_path(@address), class: "btn btn-primary" %> |
+<%= link_to 'Back', address_index_path, class: "btn btn-primary" %>

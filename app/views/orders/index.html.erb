@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <h1>Recently Placed Orders</h1>
+  <%= link_to 'New Order', new_order_path, class: "btn btn-success new-order" %>  
+  <br/>
+</div>
+
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Tittle</th>
+      <th>Description</th>
+      <th>Order Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: 'order', collection: @orders %>
+  </tbody>
+</table>
+</div>

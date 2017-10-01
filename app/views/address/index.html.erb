@@ -1,0 +1,7 @@
+<div class="album">
+	<div class="container">
+		<%= render partial: 'address', collection: @addresses %>
+	</div>
+</div>
+<hr/>
+<%= link_to "Add New Address", new_address_path, class: "btn btn-warning" %>

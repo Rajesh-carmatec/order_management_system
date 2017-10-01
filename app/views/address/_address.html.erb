@@ -1,0 +1,33 @@
+<% div_class = ( params[:controller] == "address" ? "col-md-4" : "col-md-6" ) %>
+<div class="<%= div_class%>">
+	<div class="card">
+		<table class="table table-responsive table-bordered">
+			<tbody>
+				<tr>
+					<td><strong>Address Line 1:</strong></td>
+					<td><%= address.addrress_line_1 %></td>
+				</tr>
+				<tr>
+					<td><strong>Address Line 2:</strong></td>
+					<td><%= address.addrress_line_2 %></td>
+				</tr>
+				<tr>
+					<td><strong>Pincode:</strong></td>
+					<td><%= address.pincode %></td>
+				</tr>
+				<tr>
+					<td><strong>State:</strong></td>
+					<td><%= address.state %></td>
+				</tr>
+				<tr>
+					<td><strong>Country:</strong></td>
+					<td><%= address.country %></td>
+				</tr>	
+			</tbody>  
+		</table>
+	</div>
+	<div>
+		<%= link_to "Edit Address", edit_address_path(address), class: "btn btn-warning" unless order.status %>
+		<%= link_to "Delete Address",address_path(address), method: :delete, class: "btn btn-warning" if params[:controller] == "address" %>
+	</div>
+</div>

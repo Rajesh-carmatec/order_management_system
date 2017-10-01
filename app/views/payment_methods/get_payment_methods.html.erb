@@ -1,0 +1,12 @@
+<br/>
+<h2>Select Payment Method:</h2><br/>
+<div class="form-group">
+	<%= form_tag(payment_methods_set_payment_methods_path, class: "form-group") do %>
+		<%= label_tag :amount %>
+		<%= number_to_currency(@total_price) %><br/>
+		<%= label_tag :payment_type %>
+		<%= select_tag :payment_type, options_for_select(@all_payment_types.collect{ |p| [p.name, p.id]}, :selected=> nil), class: "selectpicker" %>
+		<%= hidden_field_tag "payment_method[order_id]", @order.id %><br/><br/>
+		<%= submit_tag "Place Order", class: "btn btn-success" unless order.status %>
+	<% end %>
+</div>

@@ -1,0 +1,59 @@
+<% address_redirection_path = ( params[:action].to_s == "new" ? address_index_path : address_path ) %>
+
+<%= form_for(address, url: address_redirection_path) do |f| %>
+  <% if address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :addrress_line_1 %>
+        <%= f.text_field :addrress_line_1, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :addrress_line_2 %>
+        <%= f.text_area :addrress_line_2, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :pincode %>
+        <%= f.text_area :pincode, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :city %>
+        <%= f.text_area :city, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :state %>
+        <%= f.text_area :state, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :country %>
+        <%= f.text_area :country, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :is_current_address %>
+        <%= f.check_box :is_current_address%>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Save Address", class: "btn btn-primary" %>
+      </div>
+    </div> 
+  </div>   
+  <hr>
+<% end %>
