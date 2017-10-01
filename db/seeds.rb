@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+PAYMENT_TYPES = %w( Debit-Card Credit-Card PayTM Net-Banking PayU-Money )
+
+PAYMENT_TYPES.each { |type|
+	PaymentType.create!(
+		name: type
+	)
+}
+
